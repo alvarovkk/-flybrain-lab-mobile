@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071018">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>FlyBrain Lab</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div><b>FLYBRAIN LAB</b><small>Conectoma + simulación neuronal</small></div><span id="state">● ACTIVA</span></header>
+<nav><button class="tab on" data-tab="world">🪰 MOSCA</button><button class="tab" data-tab="brain">🧠 CEREBRO</button><button class="tab" data-tab="lab">⚡ LAB</button></nav>
+<main>
+<section id="world" class="page on">
+<div class="card"><div class="title"><b>ENTORNO AUTÓNOMO</b><span id="behavior">Explorando</span></div><canvas id="arena"></canvas></div>
+<div class="stats"><div><b id="speed">0</b><small>velocidad</small></div><div><b id="energy">100</b><small>energía</small></div><div><b id="active">0</b><small>neuronas activas*</small></div></div>
+<div class="card"><b>ESTÍMULOS</b><div class="grid"><button data-s="light">☀️ Luz</button><button data-s="food">🍎 Comida</button><button data-s="touch">☝️ Toque</button><button data-s="wind">💨 Aire</button></div></div>
+</section>
+<section id="brain" class="page">
+<div class="card"><div class="title"><b>RED NEURONAL</b><span>actividad simulada</span></div><canvas id="net"></canvas></div>
+<div class="card"><b>EVENTO NEURONAL</b><p id="event">La simulación está ejecutándose. La mosca decide continuamente entre explorar, girar, acercarse a comida o evitar estímulos.</p></div>
+</section>
+<section id="lab" class="page">
+<div class="card"><b>CONTROL</b><div class="grid"><button id="pause">⏸ Pausar</button><button id="step">⏭ Paso</button><button id="reset">↻ Reiniciar</button><button id="foodBtn">🍎 Añadir comida</button></div><label>Velocidad <input id="rate" type="range" min=".25" max="3" step=".25" value="1"><span id="ratev">1×</span></label></div>
+<div class="card science"><b>DATOS REALES VS SIMULACIÓN</b><p><strong>Conectoma:</strong> arquitectura preparada para datos FlyWire/FAFB. <strong>Actividad:</strong> los disparos y el comportamiento son calculados por el simulador, no grabaciones de una mosca viva.</p><p class="note">*Esta versión móvil usa una red reducida para visualización fluida. Está preparada para integrar datasets del conectoma.</p></div>
+</section>
+</main>
+<footer>FlyBrain Lab Mobile · experimental</footer>
+<script src="app.js"></script>
+</body></html>
